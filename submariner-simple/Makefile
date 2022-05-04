@@ -10,6 +10,14 @@ deploy:
 	kubectl --context kind-cluster2 create ns demo
 	kubectl --context kind-cluster1 -n demo apply -f netshoot-ds.yaml
 	kubectl --context kind-cluster2 -n demo apply -f netshoot-ds.yaml
+	kubectl --context kind-cluster1 -n demo apply -f httpbin-service.yaml
+	kubectl --context kind-cluster2 -n demo apply -f httpbin-service.yaml
+	kubectl config use-context kind-cluster1
+	subctl export service httpbin-service --namespace demo
+	subctl export service httpbin-service-headless --namespace demo
+	kubectl config use-context kind-cluster2
+	subctl export service httpbin-service --namespace demo
+	subctl export service httpbin-service-headless --namespace demo
 
 destroy:
 	kind delete clusters cluster1 cluster2
