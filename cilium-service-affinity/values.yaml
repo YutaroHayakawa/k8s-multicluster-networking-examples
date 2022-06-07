@@ -1,0 +1,17 @@
+securityContext:
+  privileged: true
+
+image:
+  repository: yutarohayakawa/cilium
+  tag: clustermesh-service-affinity
+  pullPolicy: Always
+  useDigest: false
+
+clustermesh:
+  useAPIServer: true
+  apiserver:
+    image:
+      repository: yutarohayakawa/clustermesh-apiserver
+      tag: clustermesh-service-affinity
+      pullPolicy: Always
+      useDigest: false
