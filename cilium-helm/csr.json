@@ -1,0 +1,12 @@
+{
+  "CN": "Cilium CA",
+  "names": [
+  {
+    "C": "US",
+    "ST": "San Francisco",
+    "L": "CA",
+    "O": "Cilium",
+    "OU": "Cilium"
+  }
+ ]
+}

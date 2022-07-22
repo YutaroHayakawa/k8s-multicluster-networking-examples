@@ -1,0 +1,6 @@
+debug:
+  enabled: true
+
+kubeProxyReplacement: strict
+
+k8sServicePort: 6443

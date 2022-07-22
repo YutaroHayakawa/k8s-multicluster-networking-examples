@@ -1,0 +1,9 @@
+clustermesh:
+  useAPIServer: true
+  tls:
+    auto:
+      method: certmanager
+      certManagerIssuerRef:
+        group: cert-manager.io
+        kind: ClusterIssuer
+        name: cilium

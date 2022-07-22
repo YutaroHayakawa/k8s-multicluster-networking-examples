@@ -1,0 +1,5 @@
+cert-key.pem
+cert.csr
+cert.pem
+values3.yaml
+host-aliases.patch.yaml
