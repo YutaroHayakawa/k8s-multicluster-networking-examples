@@ -1,6 +1,15 @@
+ipv6:
+  enabled: true
+
 debug:
   enabled: true
 
 kubeProxyReplacement: strict
 
 k8sServicePort: 6443
+
+ipam:
+  mode: kubernetes
+
+k8s-require-ipv4-pod-cidr: true
+k8s-require-ipv6-pod-cidr: true

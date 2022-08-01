@@ -2,11 +2,18 @@ kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 name: cluster1
 networking:
-  podSubnet: "10.100.0.0/16"
-  serviceSubnet: "10.110.0.0/16"
+  ipFamily: dual
+  podSubnet: "10.100.0.0/16,a:100::/108"
+  serviceSubnet: "10.110.0.0/16,a:110::/108"
   disableDefaultCNI: true
 nodes:
 - role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: ClusterConfiguration
+    controllerManager:
+      extraArgs:
+        node-cidr-mask-size-ipv6: "112"
 - role: worker
 - role: worker
 containerdConfigPatches:
